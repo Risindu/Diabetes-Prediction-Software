@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body style="background-color: rgb(200, 255, 255);">
+    <div style="flex:content; border: 0.2ch solid; padding: 10%;padding-left: 10%;">
+
+        <div style="background-color: rgba(255, 255, 255, 0.688);padding: 5%;">
+            <h1 style="text-align: center;">Login</h1>
+
+            <form action="/signin" method="post">
+            {% csrf_token %}
+             <div style="position: fixed;margin-left: 20%;">
+             <label style="font-weight: 1000;text-align: center;">User Name </label>
+             </div>
+             <div style="position:relative;margin-left:50% ;">
+             <input type = "text" name="username" id="username" maxlength="20" placeholder="username" style="border: none;height: 25px;" name="userName" required>
+             </div>
+
+             <div style="position: fixed;margin-left: 20%; margin-top: 3%;">
+             <label style="font-weight: 1000;text-align: center;"> Password </label>
+             </div>
+             <div style="position:relative;margin-left: 50%;margin-top: 3%; margin-bottom: 2%;">
+             <input type="password" name="pass1" id="pass1" maxlength="20" placeholder="password"style="border: none;height: 25px;" name="passWord" required>
+             </div>
+
+             <!--Submit and Login-->
+             <div style="position: relative; margin-left: 50%;margin-bottom: 3%;">
+             <input type="submit" style="background-color: white; border:none;height: 20px;width: 165px;background-color: rgb(90, 250, 151);" value="Login">
+             </div>
+            </form>
+
+            <!--If not have an account-->
+            <div style="position: relative; margin-left: 50%;">
+            <form action="signup"> <label >Don't have account?</label><input type="submit" value = "Sign-up" style="background: transparent; border: none;color: rgb(51, 63, 239);text-decoration: underline;">
+            </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

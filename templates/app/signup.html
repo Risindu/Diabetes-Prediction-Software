@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Singup</title>
+</head>
+<body style="background-color: rgb(200, 255, 255);">
+    <div style="flex:content; border: 0.2ch solid; padding: 10%;padding-left: 10%;">
+
+        <div style="background-color: rgba(255, 255, 255, 0.688);padding: 5%;">
+            <h1 style="text-align: center;">Sign-up</h1>
+
+            <form action="signup" method="post">
+            {% csrf_token %}
+
+             <div style="position: fixed;margin-left: 20%;">
+             <label style="font-weight: 1000;text-align: center;">User Name </label>
+             </div>
+             <div style="position:relative;margin-left:50% ;">
+             <input type = "text" id="username" name = "username" maxlength="20" placeholder="username" style="border: none;height: 25px;" required>
+             </div>
+
+             <div style="position: fixed;margin-left: 20%; margin-top: 3%;">
+             <label style="font-weight: 1000;text-align: center;"> First Name </label>
+             </div>
+             <div style="position:relative;margin-left: 50%;margin-top: 3%; margin-bottom: 2%;">
+             <input type="text" id="fname" name = "fname" maxlength="30" placeholder="first name"style="border: none;height: 25px;" required>
+             </div>
+
+                <div style="position: fixed;margin-left: 20%; margin-top: 3%;">
+             <label style="font-weight: 1000;text-align: center;"> Last Name </label>
+             </div>
+             <div style="position:relative;margin-left: 50%;margin-top: 3%; margin-bottom: 2%;">
+             <input type="text" id="lname" name="lname" maxlength="30" placeholder="first name"style="border: none;height: 25px;" required>
+             </div>
+
+                 <div style="position: fixed;margin-left: 20%; margin-top: 3%;">
+             <label style="font-weight: 1000;text-align: center;"> Email </label>
+             </div>
+             <div style="position:relative;margin-left: 50%;margin-top: 3%; margin-bottom: 2%;">
+             <input type="email" id="email" name="email" maxlength="30" placeholder="first name"style="border: none;height: 25px;" required>
+             </div>
+
+             <div style="position: fixed;margin-left: 20%; margin-top: 3%;">
+             <label style="font-weight: 1000;text-align: center;"> Password </label>
+             </div>
+             <div style="position:relative;margin-left: 50%;margin-top: 3%; margin-bottom: 2%;">
+             <input type="password" id="pass1" name="pass1" maxlength="40" placeholder="password"style="border: none;height: 25px;" required>
+             </div>
+
+               <div style="position: fixed;margin-left: 20%; margin-top: 3%;">
+             <label style="font-weight: 1000;text-align: center;"> Confirm Password </label>
+             </div>
+             <div style="position:relative;margin-left: 50%;margin-top: 3%; margin-bottom: 2%;">
+             <input type="password" id="pass2" name="pass2" maxlength="40" placeholder="password"style="border: none;height: 25px;" required>
+             </div>
+
+
+             <!--Submit and Signup-->
+             <div style="position: relative; margin-left: 50%;margin-bottom: 3%;">
+             <input type="submit" style="background-color: white; border:none;height: 20px;width: 165px;background-color: rgb(90, 250, 151);"value="Sign-up">
+             </div>
+            </form>
+            <!--If do have an account-->
+            <div style="position: relative;margin-left: 50%;">
+             <form action="/signin"><label >Already have account?</label><input type="submit" value = "Login" style="background: transparent; border: none;color: rgb(51, 63, 239);text-decoration: underline;">
+             </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
