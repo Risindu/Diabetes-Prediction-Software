@@ -21,6 +21,7 @@ urlpatterns = [
     path('signup', views.signup, name="signup"),
     path('signin', views.signin, name="signin"),
     path('signout', views.signout, name="signout"),
-
+    path("predict", views.predict, name="predict"),
+    path("result", views.result, name="result"),
 
 ]

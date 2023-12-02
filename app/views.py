@@ -84,10 +84,10 @@ def signout(request):
 
 
 def predict(request):
-    return render(request, 'predict.html')
+    return render(request, 'app/predict.html')
 
 def result(request):
-    data = pd.read_csv("E:\\Projects\\Diabetics Prediction Software\\Dataset\\diabetes.csv")
+    data = pd.read_csv("E:\\NDT IT\\Semester 2\\Software Engineering Fundementals\\Diabetes Prediction Software\\DiaSense\\Dataset\\diabetes.csv")
     X = data.drop(["Outcome","SkinThickness","BloodPressure","Insulin","DiabetesPedigreeFunction"], axis = 1)
     Y = data["Outcome"]
 
@@ -112,4 +112,4 @@ def result(request):
         result1 = "Negative"
 
 
-    return render(request, 'result.html',{"result2":result1})
+    return render(request, 'app/result.html',{"result2":result1})
