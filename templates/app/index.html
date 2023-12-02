@@ -1,8 +1,69 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+{% load static %}
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <!--Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Skranji&display=swap" rel="stylesheet">
+
+    <meta charset="UTF-8">
     <title>DiaSense</title>
+    <style>
+
+.video-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+}
+
+.video-container .video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: contain;
+  width: 80%;
+  height: 80%;
+}
+
+.video-container .video video {
+  width: 100%;
+  height: 100%;
+}
+
+.video-container .button-container {
+  position: absolute;
+  top: 85%;
+  left: 44.5%;
+}
+
+.button {
+  background-color: #EF3661; /* dark rose */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 5px;
+  transition-duration: 0.4s;
+}
+
+.button:hover {
+  background-color: #C2264C; /* Green */
+  color: white;
+}
+    </style>
+
+
 </head>
 <body>
     {% for message in messages %}
@@ -12,7 +73,10 @@
     <span aria-hidden = "true">&times;</span>
     </div>
     {% endfor %}
-    <h3>Welcome to DiaSense</h3><br><br>
+<div class="video-container">
+  <video src="{% static 'DiabetisPrediction\images\background.mp4'%}" autoplay loop muted></video>
+    <div  class="button-container">
+       <h3>Welcome to DiaSense</h3><br><br>
     {% if user.is_authenticated %}
     <h3>Hello {{ fname }}</h3>
     <button type="submit"><a href="/signout">SignOut</a></button>
@@ -20,5 +84,8 @@
     <button type="submit"><a href="/signup">SignUp</a></button>
     <button type="submit"><a href="/signin">SignIn</a></button>
     {% endif %}
+    </div>
+</div>
+
 </body>
 </html>
