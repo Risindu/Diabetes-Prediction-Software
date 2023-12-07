@@ -16,6 +16,7 @@
     {% if user.is_authenticated %}
     <h3>Hello {{ fname }}</h3>
     <button type="submit"><a href="/signout">SignOut</a></button>
+    <button type="submit"><a href="/predict">Predict</a> </button>
     {% else %}
     <button type="submit"><a href="/signup">SignUp</a></button>
     <button type="submit"><a href="/signin">SignIn</a></button>
